@@ -3,10 +3,21 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import App from '../../client/src/App';
+import livereload from 'livereload';
+import connectLiveReload from 'connect-livereload';
 
 const app = express();
 
 const port = process.env.PORT || 4242;
+
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.server.once('connection', () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh('/');
+//   }, 100);
+// });
+
+app.use(connectLiveReload());
 
 app.use(express.static('./built'));
 // if (process.env.NODE_ENV === 'development') {
