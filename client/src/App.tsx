@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from 'react';
+import Html from './components/Html';
+import AppRoutes from './routes/Router';
 
-export const App: React.FC = () => {
-  const [clientMessage, setClientMessage] = useState("");
-
-  useEffect(() => {
-    setClientMessage("Hello From React SSR");
-  }, []);
-
+const App = () => {
   return (
-    <>
-      <h1>Hello World!</h1>
-      <h2>{clientMessage}</h2>
-    </>
+    <Html title="React SSR Demo">
+      <AppRoutes />
+    </Html>
   );
 };
+
+export default App;

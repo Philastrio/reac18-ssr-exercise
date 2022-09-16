@@ -1,0 +1,7 @@
+{
+  "watch": ["./server/*", "./client/*"],
+  "ignore": ["src/**/*.test.ts", "node_modules"],
+  "ext": "ts,mjs,js,json,graphql,tsx",
+  "exec": "node build.js && node ./built/server.js",
+  "legacyWatch": true
+}
